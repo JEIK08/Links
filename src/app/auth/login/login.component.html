@@ -1,17 +1,18 @@
 <ng-template #cornerTemplate>
-	<button nz-button>SIGNUP</button>
+	<a routerLink="../signup">
+		<button nz-button>SIGNUP</button>
+	</a>
 </ng-template>
 
-<h5>Login</h5>
-
 <form>
+	<h5>Login</h5>
 	<label>
 		Your Email
-		<input nz-input placeholder="email@example.com" />
+		<input nz-input type="email" placeholder="email@example.com" />
 	</label>
 	<label>
 		Password
-		<input nz-input placeholder="***********" />
+		<input nz-input type="password" placeholder="***********" />
 	</label>
 	<button nz-button nzBlock type="submit" nzType="primary">Login</button>
 </form>

@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AuthComponent {
 
-	public component: any;
+	public cornerTemplate: any;
+
+	onChangeRoute(event: any) {
+		setTimeout(() => {
+			this.cornerTemplate = event.cornerTemplate;
+		});
+	}
 
 }

@@ -1,0 +1,28 @@
+<ng-template #cornerTemplate>
+	<a routerLink="../login">
+		<button nz-button>LOGIN</button>
+	</a>
+</ng-template>
+
+<form>
+	<h5>SIGNUP</h5>
+	<label>
+		Full name
+		<input nz-input type="text" placeholder="email@example.com" />
+	</label>
+	<label>
+		Your Email
+		<input nz-input type="email" placeholder="***********" />
+	</label>
+	<label>
+		Password
+		<input nz-input type="password" placeholder="***********" />
+	</label>
+	<button nz-button nzBlock type="submit" nzType="primary">SIGNUP</button>
+	<div class="d-flex justify-content-center mt-3">
+		<p>
+			By Creating account You agree to the<br>
+			<a class="color-main">Terms of use</a> and <a class="color-main">Privacy Polycy</a>
+		</p>
+	</div>
+</form>

@@ -6,6 +6,19 @@
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+
+	::ng-deep {
+		label {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+
+		button[type='submit'] {
+			display: block;
+			max-width: 370px;
+			margin: 0px auto;
+		}
+	}
 }
 
 .auth-cornet {
@@ -19,7 +32,8 @@ img {
 }
 
 .auth-container {
-	min-width: 560px;
+	max-width: 560px;
+	width: 100%;
 	box-shadow: 0px 0px 30px rgba(199, 199, 199, 0.55);
 	border-radius: 6px;
 	padding: 56px 32px;

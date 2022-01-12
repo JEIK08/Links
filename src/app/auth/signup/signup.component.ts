@@ -1,10 +1,10 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 
 @Component({
-	selector: 'app-login',
-	templateUrl: './login.component.html'
+	selector: 'app-signup',
+	templateUrl: './signup.component.html'
 })
-export class LoginComponent {
+export class SignupComponent {
 
 	@ViewChild('cornerTemplate') public cornerTemplate?: TemplateRef<void>;
 
