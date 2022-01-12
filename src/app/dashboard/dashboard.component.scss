@@ -17,5 +17,6 @@ img {
 
 	> *:first-child {
 		grid-row: span 2;
+		align-self: flex-start;
 	}
 }
