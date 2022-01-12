@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<div class="auth-cornet">
+	<ng-container *ngTemplateOutlet="component.cornerTemplate"></ng-container>
+</div>
+<img src="assets/images/links-logo.png" alt="Links">
+<div class="auth-container">
+	container
+	<router-outlet (activate)="component = $event"></router-outlet>
+</div>
