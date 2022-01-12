@@ -1,0 +1,21 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 40px;
+}
+
+img {
+	height: 150px;
+	margin: -24px 0px;
+}
+
+.dashboard-grid {
+	padding: 0px 40px 40px 40px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 20px 48px;
+
+	> *:first-child {
+		grid-row: span 2;
+	}
+}
