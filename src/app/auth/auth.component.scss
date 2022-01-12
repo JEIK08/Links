@@ -7,17 +7,10 @@
 	width: 100vw;
 	height: 100vh;
 
-	::ng-deep {
-		label {
-			width: 100%;
-			margin-bottom: 20px;
-		}
-
-		button[type='submit'] {
-			display: block;
-			max-width: 370px;
-			margin: 0px auto;
-		}
+	::ng-deep button[type='submit'] {
+		display: block;
+		max-width: 370px;
+		margin: 0px auto;
 	}
 }
 

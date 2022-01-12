@@ -1,0 +1,26 @@
+.list-element {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 10px;
+	padding: 24px;
+
+	+ .list-element {
+		margin-top: 28px;
+	}
+}
+
+a {
+	font-size: 36px;
+	font-weight: 600;
+	line-height: 1;
+}
+
+p {
+	grid-column: span 2;
+	font-weight: 600;
+	margin-bottom: 0px;
+}
+
+i {
+	font-size: 32px;
+}
