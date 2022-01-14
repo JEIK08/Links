@@ -4,15 +4,24 @@
 	</a>
 </ng-template>
 
-<form (ngSubmit)="logIn()">
+
+<form nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="logIn()">
 	<h5>Login</h5>
-	<label>
-		Your Email
-		<input nz-input type="email" placeholder="email@example.com" />
-	</label>
-	<label>
-		Password
-		<input nz-input type="password" placeholder="***********" />
-	</label>
-	<button nz-button nzBlock type="submit" nzType="primary">Login</button>
+	<nz-form-item>
+		<nz-form-label>Your Email</nz-form-label>
+		<nz-form-control>
+			<input nz-input type="email" formControlName="email" placeholder="email@example.com" />
+		</nz-form-control>
+	</nz-form-item>
+	<nz-form-item>
+		<nz-form-label>Password</nz-form-label>
+		<nz-form-control>
+			<input nz-input type="password" formControlName="password" placeholder="***********" />
+		</nz-form-control>
+	</nz-form-item>
+	<nz-form-item>
+		<nz-form-control class="text-center">
+			<button nz-button nzBlock type="submit" nzType="primary" [nzLoading]="loggingIn">Login</button>
+		</nz-form-control>
+	</nz-form-item>
 </form>
