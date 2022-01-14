@@ -4,22 +4,32 @@
 	</a>
 </ng-template>
 
-<form>
+<form nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="onSubmit()">
 	<h5>SIGNUP</h5>
-	<label>
-		Full name
-		<input nz-input type="text" placeholder="email@example.com" />
-	</label>
-	<label>
-		Your Email
-		<input nz-input type="email" placeholder="***********" />
-	</label>
-	<label>
-		Password
-		<input nz-input type="password" placeholder="***********" />
-	</label>
-	<button nz-button nzBlock type="submit" nzType="primary">SIGNUP</button>
-	<div class="d-flex justify-content-center mt-3">
+	<nz-form-item>
+		<nz-form-label>Full name</nz-form-label>
+		<nz-form-control>
+			<input nz-input type="text" formControlName="name" placeholder="Jeff Brown" />
+		</nz-form-control>
+	</nz-form-item>
+	<nz-form-item>
+		<nz-form-label>Your Email</nz-form-label>
+		<nz-form-control>
+			<input nz-input type="email" formControlName="email" placeholder="***********" />
+		</nz-form-control>
+	</nz-form-item>
+	<nz-form-item>
+		<nz-form-label>Password</nz-form-label>
+		<nz-form-control>
+			<input nz-input type="password" formControlName="password" placeholder="***********" />
+		</nz-form-control>
+	</nz-form-item>
+	<nz-form-item class="mb-2">
+		<nz-form-control class="text-center">
+			<button nz-button nzBlock type="submit" nzType="primary" [nzLoading]="registering">SIGNUP</button>
+		</nz-form-control>
+	</nz-form-item>
+	<div class="d-flex justify-content-center">
 		<p>
 			By Creating account You agree to the<br>
 			<a class="color-main">Terms of use</a> and <a class="color-main">Privacy Polycy</a>

@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { SessionService } from 'src/app/shared/services/session.service';
 
+import { markFormAsDirty } from 'src/app/shared/utilities';
+
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html'
@@ -28,12 +30,7 @@ export class LoginComponent {
 
 	logIn() {
 		if (this.form.invalid) {
-			Object.values(this.form.controls).forEach(control => {
-				if (control.invalid) {
-					control.markAsDirty();
-					control.updateValueAndValidity({ onlySelf: true });
-				}
-			});
+			markFormAsDirty(this.form);
 			return;
 		}
 
