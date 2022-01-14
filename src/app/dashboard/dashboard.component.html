@@ -1,6 +1,6 @@
 <header>
 	<img src="assets/images/links-logo.png" alt="Links">
-	<button nz-button routerLink="/auth">LOGOUT</button>
+	<button nz-button (click)="logOut()">LOGOUT</button>
 </header>
 <div class="dashboard-grid">
 	<app-profile></app-profile>

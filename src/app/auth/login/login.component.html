@@ -4,7 +4,7 @@
 	</a>
 </ng-template>
 
-<form>
+<form (ngSubmit)="logIn()">
 	<h5>Login</h5>
 	<label>
 		Your Email
@@ -14,5 +14,5 @@
 		Password
 		<input nz-input type="password" placeholder="***********" />
 	</label>
-	<button nz-button nzBlock type="submit" nzType="primary" routerLink="/">Login</button>
+	<button nz-button nzBlock type="submit" nzType="primary">Login</button>
 </form>
