@@ -1,5 +1,11 @@
-<div class="list-element box" *ngFor="let link of links">
-	<a class="color-main" [href]="link.url" target="_blank">{{ link.url }}</a>
-	<i class="far fa-trash-alt color-error"></i>
-	<p>{{ link.name }}</p>
-</div>
+<ng-container *ngIf="links else spinner">
+	<div class="list-element box" *ngFor="let link of links">
+		<a class="color-main" [href]="link.url" target="_blank">{{ link.url }}</a>
+		<i class="far fa-trash-alt color-error"></i>
+		<p>{{ link.name }}</p>
+	</div>
+</ng-container>
+
+<ng-template #spinner>
+	<nz-spin nzSimple nzSize="large" class="text-center"></nz-spin>
+</ng-template>

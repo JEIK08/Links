@@ -1,11 +1,15 @@
-<form>
-	<label>
-		Url To Save
-		<input nz-input type="text" />
-	</label>
-	<label>
-		Name of Url
-		<input nz-input type="text" />
-	</label>
-	<button nz-button type="submit" nzType="primary">Add</button>
+<form nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="onSubmit()">
+	<nz-form-item>
+		<nz-form-label>Url To Save</nz-form-label>
+		<nz-form-control>
+			<input nz-input type="text" formControlName="url" />
+		</nz-form-control>
+	</nz-form-item>
+	<nz-form-item>
+		<nz-form-label>Name of Url</nz-form-label>
+		<nz-form-control>
+			<input nz-input type="text" formControlName="name" />
+		</nz-form-control>
+	</nz-form-item>
+	<button nz-button type="submit" nzType="primary" [nzLoading]="loading">Add</button>
 </form>

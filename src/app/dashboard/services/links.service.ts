@@ -10,8 +10,12 @@ export class LinksService {
 
 	constructor(private http: HttpClient) { }
 
-	getList() {
+	getLinksList() {
 		return this.http.get<Link[]>('/links');
+	}
+	
+	createLink(link: any) {
+		return this.http.post('/links', link);
 	}
 
 }

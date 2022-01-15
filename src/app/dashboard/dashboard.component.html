@@ -4,6 +4,6 @@
 </header>
 <div class="dashboard-grid">
 	<app-profile></app-profile>
-	<app-links-form></app-links-form>
-	<app-links-list></app-links-list>
+	<app-links-form (onCreate)="linksList.loadLinks()"></app-links-form>
+	<app-links-list #linksList></app-links-list>
 </div>

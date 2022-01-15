@@ -14,7 +14,12 @@ export class LinksListComponent {
 	public links?: Link[];
 
 	constructor(private linksService: LinksService) {
-		this.linksService.getList().subscribe({
+		this.loadLinks();
+	}
+
+	loadLinks() {
+		this.links = undefined;
+		this.linksService.getLinksList().subscribe({
 			next: links => {
 				console.log(links);
 				this.links = links;
