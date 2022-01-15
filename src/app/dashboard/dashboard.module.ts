@@ -7,15 +7,15 @@ import { LinksService } from './services/links.service';
 
 import { DashboardComponent } from './dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
-import { UrlFormComponent } from './url-form/url-form.component';
-import { UrlListComponent } from './url-list/url-list.component';
+import { LinksFormComponent } from './links-form/links-form.component';
+import { LinksListComponent } from './links-list/links-list.component';
 
 @NgModule({
 	declarations: [
 		DashboardComponent,
 		ProfileComponent,
-		UrlFormComponent,
-		UrlListComponent
+		LinksFormComponent,
+		LinksListComponent
 	],
 	imports: [
 		SharedModule,

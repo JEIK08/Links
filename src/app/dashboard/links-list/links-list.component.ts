@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { LinksService } from '../services/links.service';
 
 @Component({
-	selector: 'app-url-list',
-	templateUrl: './url-list.component.html',
-	styleUrls: ['./url-list.component.scss']
+	selector: 'app-links-list',
+	templateUrl: './links-list.component.html',
+	styleUrls: ['./links-list.component.scss']
 })
-export class UrlListComponent {
+export class LinksListComponent {
 
 	public links?: any[];
 
