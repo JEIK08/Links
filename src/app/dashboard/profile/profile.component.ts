@@ -2,6 +2,8 @@ import { Component, HostBinding } from '@angular/core';
 
 import { SessionService } from 'src/app/shared/services/session.service';
 
+import { User } from 'src/app/shared/interfaces/user';
+
 @Component({
 	selector: 'app-profile',
 	templateUrl: './profile.component.html',
@@ -11,10 +13,10 @@ export class ProfileComponent {
 
 	@HostBinding('class') public class: string = 'box';
 
-	public user: any;
+	public user: User;
 
 	constructor(private sessionService: SessionService) {
-		this.sessionService.getUser().then((user) => this.user = user);
+		this.user = this.sessionService.getUser();
 	}
 
 }

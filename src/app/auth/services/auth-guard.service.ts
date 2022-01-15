@@ -14,7 +14,7 @@ export class AuthGuardService implements CanActivate {
 
 	canActivate(): Promise<true | UrlTree> {
 		return new Promise((resolve) => {
-			this.sessionService.getUser().then(() => {
+			this.sessionService.verifyUser().then(() => {
 				resolve(this.router.createUrlTree(['']));
 			}).catch(() => {
 				resolve(true);

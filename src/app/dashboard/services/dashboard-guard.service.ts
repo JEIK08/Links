@@ -15,7 +15,7 @@ export class DashboardGuardService implements CanActivate {
 
 	canActivate(): Promise<true | UrlTree> {
 		return new Promise((resolve) => {
-			this.sessionService.getUser().then(() => {
+			this.sessionService.verifyUser().then(() => {
 				resolve(true);
 			}).catch(() => {
 				resolve(this.router.createUrlTree(['auth']));
