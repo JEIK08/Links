@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { NzModalService } from 'ng-zorro-antd/modal';
+
 import { LinksService } from '../services/links.service';
 
 import { Link } from '../interfaces/link';
@@ -13,7 +15,10 @@ export class LinksListComponent {
 
 	public links?: Link[];
 
-	constructor(private linksService: LinksService) {
+	constructor(
+		private linksService: LinksService,
+		private nzModalService: NzModalService
+	) {
 		this.loadLinks();
 	}
 
@@ -29,6 +34,28 @@ export class LinksListComponent {
 				response = response.substring(0, response.length - 2) + ']';
 				this.links = JSON.parse(response);
 			}
+		});
+	}
+
+	deleteLink(link: Link) {
+		this.nzModalService.confirm({
+			nzTitle: 'Delete',
+			nzContent: `Are you sure you want to delete the link ${ link.url }?`,
+			nzClosable: false,
+			nzOkText: 'Yes',
+			nzCancelText: 'No',
+			nzOnOk: () => new Promise(resolve => {
+				this.linksService.deleteLink(link.id).subscribe({
+					next: () => {
+						resolve();
+						this.loadLinks();
+					},
+					error: () => {
+						resolve();
+						this.loadLinks();
+					}
+				});
+			})
 		});
 	}
 

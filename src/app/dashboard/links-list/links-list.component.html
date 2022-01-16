@@ -1,7 +1,7 @@
 <ng-container *ngIf="links else spinner">
 	<div class="list-element box" *ngFor="let link of links">
 		<a class="color-main" [href]="link.url" target="_blank">{{ link.url }}</a>
-		<i class="far fa-trash-alt color-error"></i>
+		<i class="far fa-trash-alt color-error" (click)="deleteLink(link)"></i>
 		<p>{{ link.name }}</p>
 	</div>
 </ng-container>

@@ -13,9 +13,13 @@ export class LinksService {
 	getLinksList() {
 		return this.http.get<Link[]>('/links');
 	}
-	
+
 	createLink(link: any) {
 		return this.http.post('/links', link);
+	}
+
+	deleteLink(linkId: Link['id']) {
+		return this.http.delete(`/links/${ linkId }`);
 	}
 
 }
