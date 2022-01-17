@@ -37,17 +37,10 @@ export class LinksFormComponent {
 		}
 
 		this.loading = true;
-		this.linksService.createLink(this.form.value).subscribe({
-			next: () => {
-				this.loading = false;
-				this.form.reset();
-				this.onCreate.emit();
-			},
-			error: () => {
-				this.loading = false;
-				this.form.reset();
-				this.onCreate.emit();
-			}
+		this.linksService.createLink(this.form.value).subscribe(() => {
+			this.loading = false;
+			this.form.reset();
+			this.onCreate.emit();
 		});
 	}
 

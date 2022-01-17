@@ -26,11 +26,10 @@ export class LinksListComponent {
 		this.links = undefined;
 		this.linksService.getLinksList().subscribe({
 			next: links => {
-				console.log(links);
 				this.links = links;
 			},
 			error: error => {
-				let response: string = error.error.text.substr(4).replaceAll("\n", "");
+				let response: string = error.error.text.replaceAll("\n", "");
 				response = response.substring(0, response.length - 2) + ']';
 				this.links = JSON.parse(response);
 			}
@@ -45,15 +44,9 @@ export class LinksListComponent {
 			nzOkText: 'Yes',
 			nzCancelText: 'No',
 			nzOnOk: () => new Promise(resolve => {
-				this.linksService.deleteLink(link.id).subscribe({
-					next: () => {
-						resolve();
-						this.loadLinks();
-					},
-					error: () => {
-						resolve();
-						this.loadLinks();
-					}
+				this.linksService.deleteLink(link.id).subscribe(() => {
+					resolve();
+					this.loadLinks();
 				});
 			})
 		});
